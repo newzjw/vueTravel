@@ -3,6 +3,8 @@
     <home-header></home-header>
     <home-swiper></home-swiper>
     <home-icons></home-icons>
+    <home-recommend></home-recommend>
+    <home-weekend></home-weekend>
   </div>
 </template>
 
@@ -11,13 +13,17 @@
 import HomeHeader from './componets/Header'
 import HomeSwiper from './componets/Swiper'
 import HomeIcons from './componets/Icons'
+import HomeRecommend from './componets/Recommend'
+import HomeWeekend from './componets/Weekend'
 export default {
   name: 'Home',
   // 挂载子组件
   components: {
     HomeHeader,
     HomeSwiper,
-    HomeIcons
+    HomeIcons,
+    HomeRecommend,
+    HomeWeekend
   }
 }
 </script>
