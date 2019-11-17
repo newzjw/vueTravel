@@ -2,7 +2,7 @@
   <div>
     <div class="title">热销推荐</div>
     <ul>
-      <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+      <li class="item border-bottom" v-for="item of list" :key="item.id">
         <img class="item-img" :src="item.imgUrl" />
         <div class="item-info">
           <p class="item-title">{{ item.title }}</p>
@@ -17,30 +17,8 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  data() {
-    return {
-      recommendList: [{
-        id: '001',
-        imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-        title: '海洋世界',
-        desc: '海洋世界好玩海洋世界好玩海洋世界好玩海洋世界好玩海洋世界好玩海洋世界好玩'
-      }, {
-        id: '002',
-        imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-        title: '海洋世界2',
-        desc: '海洋世界好玩海洋世界好玩海洋世界好玩海洋世界好玩海洋世界好玩海洋世界好玩'
-      }, {
-        id: '003',
-        imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-        title: '海洋世界3',
-        desc: '海洋世界好玩海洋世界好玩海洋世界好玩海洋世界好玩海洋世界好玩海洋世界好玩'
-      }, {
-        id: '004',
-        imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-        title: '海洋世界4',
-        desc: '海洋世界好玩海洋世界好玩海洋世界好玩海洋世界好玩海洋世界好玩海洋世界好玩'
-      }]
-    }
+  props: {
+    list: Array
   }
 }
 </script>

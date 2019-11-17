@@ -1,20 +1,9 @@
 <template>
   <div class="wrapper">
-    <swiper :options="swiperOption">
+    <swiper :options="swiperOption" v-if="showSwiper">
       <!-- slides -->
-      <swiper-slide>
-        <img
-          class="swiper-img"
-          src="https://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/201911/2b3a9445cc37885eb13e0402baef9f5e.png_750x200_24df2b41.png"
-          alt
-        />
-      </swiper-slide>
-      <swiper-slide>
-        <img
-          class="swiper-img"
-          src="https://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20199/bddb8937748a19db48bdbfae91c0936d.jpg_750x200_85ec3869.jpg"
-          alt
-        />
+      <swiper-slide v-for="item of list" :key="item.id">
+        <img class="swiper-img" :src="item.imgUrl" />
       </swiper-slide>
       <!-- Optional controls -->
       <div class="swiper-pagination" slot="pagination"></div>
@@ -25,6 +14,9 @@
 <script>
 export default {
   name: 'HomeSwiper',
+  props: {
+    list: Array
+  },
   // 注意子组件里的data必须是一个函数，这里是es6写法
   data() {
     return {
@@ -32,6 +24,12 @@ export default {
         pagination: '.swiper-pagination',
         loop: true
       }
+    }
+  },
+  computed: {
+    // 解决初次展示的问题，初次展示会展示第四张，有了这个方法后展示第一张
+    showSwiper() {
+      return this.list.length
     }
   }
 }

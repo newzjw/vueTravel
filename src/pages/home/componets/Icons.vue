@@ -16,55 +16,21 @@
 <script>
 export default {
   name: 'HomeIcons',
+  props: {
+    list: Array
+  },
   data() {
     return {
       swiperOption: {
         autoplay: false
-      },
-      iconList: [{
-        id: '001',
-        imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-        desc: '景点'
-      }, {
-        id: '002',
-        imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-        desc: '景点'
-      }, {
-        id: '003',
-        imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-        desc: '景点'
-      }, {
-        id: '004',
-        imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-        desc: '景点'
-      }, {
-        id: '005',
-        imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-        desc: '景点'
-      }, {
-        id: '006',
-        imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-        desc: '景点'
-      }, {
-        id: '007',
-        imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-        desc: '景点'
-      }, {
-        id: '008',
-        imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-        desc: '景点'
-      }, {
-        id: '009',
-        imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-        desc: '景点'
-      }]
+      }
     }
   },
   computed: {
     // 用于左右滑动的分页，返回一个二维数组
     pages() {
       const pages = []
-      this.iconList.forEach((item, index) => {
+      this.list.forEach((item, index) => {
         const page = Math.floor(index / 8)
         if (!pages[page]) {
           pages[page] = []
@@ -101,9 +67,10 @@ export default {
     bottom: .44rem
     box-sizing: border-box
     padding: .1rem
+    text-align: center
 
     .icon-img-content
-      width: 100%
+      width: 80%
 
   .icon-desc
     position: absolute
