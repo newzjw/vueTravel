@@ -8,7 +8,9 @@
     </div>
     <router-link to="/city">
       <div class="header-right">
-        {{ city }}
+        <!-- {{ this.$store.state.city }} -->
+        <!-- 用mapState优化之后就可以直接用this.city了 -->
+        {{ this.city }}
         <span class="iconfont arrow-icon">&#xe64a;</span>
       </div>
     </router-link>
@@ -16,10 +18,13 @@
 </template>
 
 <script>
+// mapState用于优化
+import { mapState } from 'vuex'
 export default {
   name: 'HomeHeader',
-  props: {
-    city: String
+  computed: {
+    //  把vuex中公用数据city映射到计算属性当中
+    ...mapState(['city'])
   }
 }
 </script>
