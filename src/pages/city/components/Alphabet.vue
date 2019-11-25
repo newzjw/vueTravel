@@ -1,5 +1,6 @@
 <template>
   <ul class="list">
+    <!-- @touchstart.prevent阻止默认行为，解决手机测试的时候滚动字母表，屏幕一起滚动的问题 -->
     <li class="item"
       v-for="(item,key) of cities"
       :key="key"
