@@ -1,5 +1,6 @@
 <template>
   <transition>
+    <!-- 外部组件插入进来的插槽 -->
     <slot></slot>
   </transition>
 </template>

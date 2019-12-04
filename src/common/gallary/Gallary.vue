@@ -28,7 +28,7 @@ export default {
         pagination: '.swiper-pagination',
         // 可以查看swiper的文档
         paginationType: 'fraction',
-        // 当监听到自己或者父元素发生变化的时候，自我刷新一次
+        // 当监听到自己或者父元素发生变化的时候，自我刷新一次，解决轮播图拖动出现的问题
         observeParents: true,
         observer: true
       }
@@ -43,6 +43,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+// swiper插件默认是overflow hidden，这里要让页码显示，改成inherit
 .container >>> .swiper-container
   overflow: inherit
 

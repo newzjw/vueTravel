@@ -34,7 +34,6 @@ export default {
         .then(this.handleGetCityInfoSucc)
     },
     handleGetCityInfoSucc (res) {
-      console.log(res)
       res = res.data
       if (res.ret && res.data) {
         const data = res.data
@@ -42,6 +41,7 @@ export default {
         this.hotCities = data.hotCities
       }
     },
+    // 这里的letter是通过子组件alphabet传递过来的，通过this.$emit('change', e.target.innerText)
     handleLetterChange (letter) {
       this.letter = letter
     }

@@ -1,4 +1,5 @@
 <template>
+  <!-- 外层套div，解决网速慢时的页面抖动问题 -->
   <div class="wrapper">
     <swiper :options="swiperOption" v-if="showSwiper">
       <!-- slides -->
@@ -43,6 +44,7 @@ export default {
   width: 100%
   height: 0
   padding-bottom: 31.25%
+  // 这里设置背景色，用于网速慢的时候美化页面
   background: #eee
 
   .swiper-img

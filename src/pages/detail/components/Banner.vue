@@ -3,7 +3,7 @@
     <div class="banner" @click="handleBannerClick">
       <img class="banner-img" :src="bannerImg" />
       <div class="banner-info">
-        <div class="banner-tittle">{{this.sightName}}</div>
+        <div class="banner-title">{{this.sightName}}</div>
         <div class="banner-number">
           <span class="iconfont banner-icon">&#xe692;</span>
           {{this.bannerImgs.length}}
@@ -36,9 +36,11 @@ export default {
     }
   },
   methods: {
+    // 点击banner，显示画廊
     handleBannerClick() {
       this.showGallary = true
     },
+    // 点击画廊，关闭画廊
     handleGallaryClose() {
       this.showGallary = false
     }
@@ -67,7 +69,7 @@ export default {
     // 背景渐变效果
     background-image: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, .8))
 
-    .banner-tittle
+    .banner-title
       flex: 1
       font-size: .32rem
       padding: 0 .2rem

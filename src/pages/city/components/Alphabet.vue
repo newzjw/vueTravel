@@ -34,18 +34,19 @@ export default {
   },
   data () {
     return {
+      // touchStatus标识位
       touchStatus: false,
       startY: 0,
       timer: null
     }
   },
   updated () {
-    // A元素距离顶部的高度，这个值是固定的，把它写在updated钩子里
+    // A元素距离顶部的高度，这个值是固定的，把它写在updated钩子里，如果写在handleTouchMove方法里，每次移动就会执行一次，效率低
     this.startY = this.$refs['A'][0].offsetTop
   },
   methods: {
+    // 把点击到字母传递给list组件，可以先通过事件传递给父组件city，再通过city传递给list
     handleLetterClick(e) {
-      console.log(e)
       this.$emit('change', e.target.innerText)
     },
     handleTouchStart () {

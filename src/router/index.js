@@ -6,6 +6,7 @@ import Detail from '@/pages/detail/Detail'
 
 Vue.use(Router)
 
+// 导出的内容：一些路由配置项
 export default new Router({
   routes: [{
     path: '/',

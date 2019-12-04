@@ -33,6 +33,7 @@ export default {
     return {
       keyword: '',
       list: [],
+      // 用于节流
       timer: null
     }
   },
@@ -78,6 +79,7 @@ export default {
     }
   },
   mounted() {
+    // 如果搜索结果很多，超出一页范围，就让搜索区域可以滚动
     this.scroll = new Bscroll(this.$refs.search)
   }
 }

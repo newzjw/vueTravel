@@ -37,6 +37,7 @@ export default {
         }
         pages[page].push(item)
       })
+      console.log(pages)
       return pages
     }
   }
@@ -45,7 +46,8 @@ export default {
 
 <style lang="stylus" scoped>
 @import '~styles/varibles.styl'
-
+@import '~styles/mixins.styl'
+// 外层专门做宽高比例
 .icons >>> .swiper-container
   height: 0
   padding-bottom: 61%

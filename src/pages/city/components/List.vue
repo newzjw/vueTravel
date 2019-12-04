@@ -59,6 +59,7 @@ export default {
     ...mapMutations(['changeCity'])
   },
   watch: {
+    // 监听letter的变化
     letter () {
       if (this.letter) {
         // this.$refs[this.letter]是数组，不是标准的dom元素，需要通过[0]把它变成dom元素

@@ -20,6 +20,8 @@ new Vue({
   el: '#app',
   router,
   store,
+  // 这里是局部组件的使用
   components: { App },
+  // 把app这个组件渲染出来，把该组件显示在页面上
   template: '<App/>'
 })
